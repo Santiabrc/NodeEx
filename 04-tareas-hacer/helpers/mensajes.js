@@ -48,7 +48,4 @@ const pausa = () => {
 
 }
 
-module.exports = {
-    mostrarMenu,
-    pausa
-}
+export {mostrarMenu, pausa};
