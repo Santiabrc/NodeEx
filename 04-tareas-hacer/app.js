@@ -1,7 +1,5 @@
-require("colors");
-import { inquirerMenu } from "../helpers/inquirer.js";
-
-
+import "colors";
+import { inquirerMenu }  from "../04-tareas-hacer/helpers/inquirer";
 
 console.clear();
 
