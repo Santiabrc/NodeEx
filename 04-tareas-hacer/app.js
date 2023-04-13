@@ -3,7 +3,6 @@ import { inquirerMenu, pausa, leerInput }  from "./helpers/inquirer.js";
 import { Tareas } from "./models/tareas.js";
 
 const main = async() =>{
-    console.log("hola perro");
 
     let opt = '';
     const tareas = new Tareas();
@@ -15,18 +14,15 @@ const main = async() =>{
             case '1':
                 //crear opcion
                 const desc = await leerInput('Descripcion: ');
-                console.log(desc)
+                tareas.crearTareas(desc);
             break;
 
             case '2':
-                console.log(tareas._listado);
+                console.log(tareas.listadoArr);
             break;
         }
 
     
-
-        console.log(tareas)
-
        await pausa();
 
     } while (opt !== '0');
