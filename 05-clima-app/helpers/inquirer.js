@@ -5,7 +5,7 @@ const preguntas = [
   {
     type: "list",
     name: "opcion",
-    message: "Que deseas hacer muñeco?".red,
+    message: "Weather App".green,
     choices: [
       {
         value: 1,
