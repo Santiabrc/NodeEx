@@ -1,11 +1,13 @@
+import * as fs from 'fs'
 import axios from 'axios';
 
 
 class Busquedas { 
-    historial = ['']
+    historial = [];
+    dbPath = './db/database.json';
 
     constructor() { 
-        //TODO: leer DB si existe
+        this.leerDB()
     }
 
     get paramsMapBox() {
@@ -68,7 +70,26 @@ class Busquedas {
             console.log(error)
         }
     }
+    agregarHistorial(lugar = ''){
+        if(this.historial.includes(lugar.toLocaleLowerCase())){
+            return
+        }
 
+        this.historial.unshift(lugar.toLocaleLowerCase());
+        
+        this.guardarDB();
+    }
+    
+    guardarDB(){
+        const payload = {
+            historial: this.historial
+        }
+
+        fs.writeFileSync(this.dbPath, JSON.stringify(payload))
+    }
+    leerDB(){
+        const info = fs.readFileSync(path, {'utf-8'})
+    }
 }
 
 export {Busquedas}
