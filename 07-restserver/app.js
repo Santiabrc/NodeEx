@@ -8,5 +8,5 @@ app.get('/', function (req, res) {
 })
 
 app.listen(process.env.PORT, ()=> {
-    console.log('servidor corriendo en e l puerto', process.env.PORT)
+    console.log('servidor corriendo en el puerto', process.env.PORT)
 })
