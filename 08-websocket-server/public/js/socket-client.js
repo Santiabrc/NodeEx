@@ -13,7 +13,7 @@ socketClient.on('connect', () =>{
 });
 
 socketClient.on('disconnect', () =>{
-    console.log('Desconectado del servidor')
+    //console.log('Desconectado del servidor')
 
     lblOffline.style.display = '';
     lblOnline.style.display = 'none'; 
@@ -27,5 +27,7 @@ btnEnviar.addEventListener('click', () =>{
         fecha: new Date().getTime()
     }
 
-    socketClient.emit('enviar-mensaje', payload);
-})
+    socketClient.emit('enviar-mensaje', payload, ( id ) => {
+        console.log('Desde el server', id );
+    });
+});
